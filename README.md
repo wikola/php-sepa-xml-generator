@@ -28,14 +28,14 @@ SEPA Direct Debit
 		$directDebitTransaction = \SEPA\XMLGenerator::PAIN_008_001_02; // For Direct Debit transactions is By Defaut
 		$creditTransfer = \SEPA\XMLGenerator::PAIN_001_001_02; //For Credit Transfer
 
-		SEPA\Factory\XMLGeneratorFactory::createXmlGeneratorObject($directDebitTransaction)->addXmlMessage(
-        	SEPA\Factory\XMLGeneratorFactory::createXMLMessage()
+		SEPA\Factory\XmlGeneratorFactory::createXmlGeneratorObject($directDebitTransaction)->addXmlMessage(
+        	SEPA\Factory\XmlGeneratorFactory::createXMLMessage()
         		->setMessageGroupHeader(
-        			SEPA\Factory\XMLGeneratorFactory::createXMLGroupHeader()
+        			SEPA\Factory\XmlGeneratorFactory::createXMLGroupHeader()
         				->setMessageIdentification(1)
         				->setInitiatingPartyName('Amazing SRL ???? ыаывпавпва '))
         		->addMessagePaymentInfo(
-        			SEPA\Factory\XMLGeneratorFactory::createXMLPaymentInfo()
+        			SEPA\Factory\XmlGeneratorFactory::createXMLPaymentInfo()
         				->setPaymentInformationIdentification(6222)
         				->setSequenceType('FRST')
         				->setCreditorAccountIBAN('MD24 AG00 0225 1000 1310 4168')
@@ -89,13 +89,13 @@ SEPA Credit Transfer
 ===
 
 ```php
-	$xmlFile = SEPA\Factory\XMLGeneratorFactory::createXmlGeneratorObject(\SEPA\XMLGenerator::PAIN_001_001_02)->addXmlMessage(
-			SEPA\Factory\XMLGeneratorFactory::createXMLMessage()->setMessageGroupHeader(
-				SEPA\Factory\XMLGeneratorFactory::createXMLGroupHeader()
+	$xmlFile = SEPA\Factory\XmlGeneratorFactory::createXmlGeneratorObject(\SEPA\XMLGenerator::PAIN_001_001_02)->addXmlMessage(
+			SEPA\Factory\XmlGeneratorFactory::createXMLMessage()->setMessageGroupHeader(
+				SEPA\Factory\XmlGeneratorFactory::createXMLGroupHeader()
 					->setMessageIdentification(1)
 					->setInitiatingPartyName('Amazing SRL ???? ыаывпавпва'))
 				->addMessagePaymentInfo(
-					SEPA\Factory\XMLGeneratorFactory::createXMLPaymentInfo()
+					SEPA\Factory\XmlGeneratorFactory::createXMLPaymentInfo()
 						->setAggregatePerMandate(false)
 						->setPaymentInformationIdentification(6222)
 						->setSequenceType('FRST')
